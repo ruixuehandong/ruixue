@@ -1,3 +1,6 @@
+//202510306225
+//3272281276@qq.com
+//邓鑫瑞
 #include <stdio.h>
  int main() {
      int a, b;
