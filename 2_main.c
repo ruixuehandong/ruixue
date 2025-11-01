@@ -2,19 +2,19 @@
 //3272281276@qq.com
 //邓鑫瑞
 #include <stdio.h>
- int main() {
-     int score;
-     scanf("%d", &score);
-     if (score >= 90 && score <= 100) {
-         printf("A\n");
-     } else if (score >= 80 && score < 90) {
-         printf("B\n");
-     } else if (score >= 70 && score < 80) {
-         printf("C\n");
-     } else if (score >= 60 && score < 70) {
-         printf("D\n");
-     } else if (score >= 0 && score < 60) {
-         printf("E\n");
-     }
-     return 0;
- }
+int main() {
+    int i, bai, shi, ge;
+    // 遍历所有三位数
+    for (i = 100; i <= 999; i++) {
+        bai = i / 100;    // 提取百位
+        shi = i / 10 % 10;// 提取十位
+        ge = i % 10;      // 提取个位
+        // 判断是否满足水仙花数条件
+        if (bai * bai * bai + shi * shi * shi + ge * ge * ge == i) {
+            printf("%d ", i);
+        }
+    }
+    // 移除最后一个空格（优化输出格式）
+    printf("\b");
+    return 0;
+}
