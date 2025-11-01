@@ -2,13 +2,18 @@
 //3272281276@qq.com
 //邓鑫瑞
 #include <stdio.h>
- int main() {
-     int a, b, c;
-     scanf("%d %d %d", &a, &b, &c);
-     if (a + b > c && a + c > b && b + c > a) {
-         printf("可以组成三角形\n");
-     } else {
-         printf("不能组成三角形\n");
-     }
-     return 0;
- }
+int main() {
+    int i = 100, bai, shi, ge;
+    // While循环遍历三位数
+    while (i <= 999) {
+        bai = i / 100;
+        shi = i / 10 % 10;
+        ge = i % 10;
+        if (bai * bai * bai + shi * shi * shi + ge * ge * ge == i) {
+            printf("%d ", i);
+        }
+        i++;
+    }
+    printf("\b");
+    return 0;
+}
