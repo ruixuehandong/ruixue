@@ -2,18 +2,22 @@
 //3272281276@qq.com
 //邓鑫瑞
 #include <stdio.h>
-int main() {
-    int i = 100, bai, shi, ge;
-    // While循环遍历三位数
-    while (i <= 999) {
-        bai = i / 100;
-        shi = i / 10 % 10;
-        ge = i % 10;
-        if (bai * bai * bai + shi * shi * shi + ge * ge * ge == i) {
-            printf("%d ", i);
-        }
-        i++;
+
+// 计算a的b次幂（b为非负整数）
+int power(int a, int b) {
+    int result = 1;
+    for (int i = 0; i < b; i++) {
+        result *= a;
     }
-    printf("\b");
+    return result;
+}
+
+int main() {
+    // 计算1²+2²+3²+4²+5²
+    int sum = 0;
+    for (int i = 1; i <= 5; i++) {
+        sum += power(i, 2);
+    }
+    printf("%d\n", sum); // 输出55
     return 0;
 }
