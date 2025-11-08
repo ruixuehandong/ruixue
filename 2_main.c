@@ -2,19 +2,22 @@
 //3272281276@qq.com
 //邓鑫瑞
 #include <stdio.h>
+
 int main() {
-    int i, bai, shi, ge;
-    // 遍历所有三位数
-    for (i = 100; i <= 999; i++) {
-        bai = i / 100;    // 提取百位
-        shi = i / 10 % 10;// 提取十位
-        ge = i % 10;      // 提取个位
-        // 判断是否满足水仙花数条件
-        if (bai * bai * bai + shi * shi * shi + ge * ge * ge == i) {
-            printf("%d ", i);
+    int arr[3][3], trans[3][3];
+    // 输入原矩阵
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &arr[i][j]);
+            trans[j][i] = arr[i][j]; // 直接转置赋值
         }
     }
-    // 移除最后一个空格（优化输出格式）
-    printf("\b");
+    // 输出转置矩阵
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", trans[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
