@@ -2,18 +2,28 @@
 //3272281276@qq.com
 //邓鑫瑞
 #include <stdio.h>
+
 int main() {
-    int n, i = 3, is_prime = 1;
-    scanf("%d", &n);
-    if (n == 1) is_prime = 0;
-    else if (n == 2) is_prime = 1;
-    else if (n % 2 == 0) is_prime = 0;
-    // While循环替代For循环，判断奇数因子
-    while (i * i <= n && is_prime) {
-        if (n % i == 0) is_prime = 0;
-        i += 2;
+    int arr[10];
+    // 输入10个数字
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
     }
-    if (is_prime) printf("密钥安全，密码设置成功\n");
-    else printf("密钥不安全，请重新输入\n");
+    // 冒泡排序核心逻辑
+    for (int i = 0; i < 9; i++) { // 排序轮次
+        for (int j = 0; j < 9 - i; j++) { // 每轮比较次数
+            if (arr[j] > arr[j+1]) {
+                // 交换元素
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    // 输出排序结果
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }
